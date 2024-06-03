@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XY&Z - Perfumaria Artesanal</title>
+  <style>
+    /* Reset CSS */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos gerais */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Animação de transição */
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .fade-out {
+      animation: fadeOut 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+    }
+
+    /* Cabeçalho */
+    header {
+      background-color: #f9f9f9;
+      padding: 20px;
+      position: relative;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .logo {
+      position: absolute;
+      top: -2px;
+      left: 0px;
+      max-width: 70px;
+    }
+
+    /* Seção de destaque */
+    #destaque {
+      background-color: #ff6f00;
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #fff;
+      color: #ff6f00;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Seção de promoção */
+    #promocao {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 30px;
+    }
+
+    #promocao h2 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .promocao-produto {
+      display: inline-block;
+      width: 200px;
+      text-align: center;
+      margin: 20px;
+      background-color: #fff;
+      border: 1px solid #f2f2f2;
+      padding: 20px;
+      border-radius: 4px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .promocao-produto:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .promocao-produto img {
+      width: 100%;
+      height: auto;
+    }
+
+    .promocao-produto h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .promocao-produto p {
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .promocao-produto .comprar-button {
+      display: inline-block;
+      background-color: #ff6f00;
+      color: #fff;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .promocao-produto .comprar-button:hover {
+      background-color: #e65c00;
+    }
+
+    /* Seção de produtos */
+    #produtos {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .produto {
+      display: inline-block;
+      width: 200px;
+      text-align: center;
+      margin: 20px;
+      background-color: #fff;
+      border: 1px solid #f2f2f2;
+      padding: 20px;
+      border-radius: 4px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .produto:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .produto img {
+      width: 100%;
+      height: auto;
+    }
+
+    .produto h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .produto p {
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .produto .comprar-button {
+      display: inline-block;
+      background-color: #ff6f00;
+      color: #fff;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .produto .comprar-button:hover {
+      background-color: #e65c00;
+    }
+
+    /* Seção de contato */
+    #contato {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Seção de sobre */
+    #sobre {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Fontes personalizadas */
+    body {
+      font-family: "Arial", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Helvetica", sans-serif;
+    }
+
+    /* Responsividade */
+    @media only screen and (max-width: 768px) {
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .produto {
+        margin: 20px auto;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Adiciona a classe fade-in ao carregar a página
+      document.body.classList.add("fade-in");
+
+      // Encontra todos os links da página
+      const links = document.querySelectorAll("a");
+
+      links.forEach(link => {
+        link.addEventListener("click", (event) => {
+          // Verifica se o link é interno (âncora) ou externo
+          if (link.hostname === window.location.hostname && link.hash) {
+            event.preventDefault();
+            const targetId = link.hash.slice(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // Adiciona a classe fade-out antes de navegar para a seção
+              document.body.classList.add("fade-out");
+
+              // Espera a animação completar antes de navegar para a seção
+              setTimeout(() => {
+                window.location.hash = link.hash;
+                document.body.classList.remove("fade-out");
+                document.body.classList.add("fade-in");
+              }, 1000);
+            }
+          } else if (link.hostname === window.location.hostname) {
+            event.preventDefault();
+            const href = link.href;
+
+            // Adiciona a classe fade-out antes de navegar para a nova página
+            document.body.classList.add("fade-out");
+
+            // Espera a animação completar antes de mudar de página
+            setTimeout(() => {
+              window.location.href = href;
+            }, 1000);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body class="fade-in">
+  <!-- Cabeçalho -->
+  <header>
+    <img src="logo.png" alt="Logo da Perfumaria Artesanal" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção de destaque -->
+  <section id="destaque">
+    <h1>XY&Z - Perfumaria Online</h1>
+    <p>Encontre sua fragrância perfeita!</p>
+    <a href="#produtos" class="cta-button">Ver Produtos</a>
+  </section>
+
+  <!-- Seção de promoção -->
+  <section id="promocao">
+    <h2>Promoção especial </h2>
+    <div class="promocao-produto">
+      <img src="image-removebg.png" alt="Produto 1">
+      <h3>121 VIP MEN</h3>
+      <p>Preço: R$70,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+    <div class="promocao-produto">
+      <img src="image-removebg-preview (1).png" alt="Produto 2">
+      <h3>Three Million</h3>
+      <p>Preço: R$89,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+  </section>
+
+  <!-- Seção de produtos -->
+  <section id="produtos">
+    <h2>Produtos</h2>
+    <div class="produto">
+      <img src="image-removebg-preview (2).png" alt="Produto 3">
+      <h3>Black Diamond</h3>
+      <p>Preço: R$80,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+    <div class="produto">
+      <img src="image-removebg-preview (3).png" alt="Produto 4">
+      <h3>Royal Blossom</h3>
+      <p>Preço: R$99,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+    <div class="produto">
+      <img src="image-removebg-preview (4).png" alt="Produto 5">
+      <h3>Midnight Muse</h3>
+      <p>Preço: R$60,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+    <div class="produto">
+      <img src="image-removebg-preview (5).png" alt="Produto 6">
+      <h3>La Vie Est Belle</h3>
+      <p>Preço: R$120,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+    <div class="produto">
+      <img src="image-removebg-preview (6).png" alt="Produto 7">
+      <h3>Bleu de Chanel</h3>
+      <p>Preço: R$109,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+    <div class="produto">
+      <img src="image-removebg-preview (7).png" alt="Produto 8">
+      <h3>Flowerbomb</h3>
+      <p>Preço: R$95,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+    <div class="produto">
+      <img src="image-removebg-preview (8).png" alt="Produto 9">
+      <h3>Millionaire</h3>
+      <p>Preço: R$79,90</p>
+      <a href="pagamento.html" class="comprar-button">Comprar</a>
+    </div>
+  </section>
+
+  <!-- Seção de contato -->
+  <section id="contato">
+    <h2>Entre em contato conosco para obter mais informações:</h2>
+    <p>Endereço: R. Silvino Dalbó, 85 - Jardim Polo Centro, Foz do Iguaçu - PR, 85863-759</p>
+    <p>Número: (45) 999123456</p>
+    <p>Email: xyezperfumaria@gmail.com</p>
+  </section>
+
+  <!-- Seção sobre -->
+  <section id="sobre">
+    <h2>Sobre nós</h2>
+    <p>A empresa XY&Z nasce de um pequeno projeto estudantil proposto no ensino médio, desde lá viemos aprimorando nossas fórmulas, essências e fixação. Hoje já somos a maior perfumaria artesanal online em solo tupiniquim!</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Todos os direitos reservados &copy; 2024 XY&Z - Perfumaria Artesanal</p>
+  </footer>
+</body>
+
+</html>
